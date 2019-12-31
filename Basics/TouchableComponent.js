@@ -11,7 +11,9 @@ export default function App() {
     { name : "Ujjwal Gupta" , key : 6},
     { name : "Rahul Sharma" , key : 7},
     { name : "Anshul Goel" , key : 8},
-    { name : "Abhay Rana" , key : 9}
+    { name : "Abhay Rana" , key : 9},
+    { name : "Anshul Goel" , key : 10},
+    { name : "Abhay Rana" , key : 11}
   ])   
   
   pressHandler = (key) => {

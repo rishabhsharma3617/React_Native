@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Image ,Alert, ScrollView , TouchableOpacity, FlatList} from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Image ,Alert, ScrollView , TouchableOpacity, FlatList , TouchableWithoutFeedback , Keyboard} from 'react-native';
 import Header from './components/header'
 import TodoItem from './components/todoitem'
 import AddTodo from './components/addtodo'
@@ -43,7 +43,10 @@ export default function App() {
 
 
   return (
-    <View style={styles.container}>
+    <TouchableWithoutFeedback onPress={() => {  //touching anywhere on the screen it shoots the onpress event 
+      Keyboard.dismiss() //it closes the keyboard
+    }}>
+        <View style={styles.container}>
        {/**header */}
        <Header />
        <View style={styles.content}>
@@ -59,6 +62,8 @@ export default function App() {
          </View>
        </View>
     </View>
+    </TouchableWithoutFeedback>
+    
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Image , ScrollView , TouchableOpacity, FlatList} from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Image,Keyboard , ScrollView , TouchableOpacity, FlatList} from 'react-native';
 
 export default function addTodo(props) {
 
@@ -10,6 +10,7 @@ export default function addTodo(props) {
     }
 
     const onPressAdd = () => {
+        Keyboard.dismiss()
         props.submitnewTodo(newTodo)
         setIt('')
     }

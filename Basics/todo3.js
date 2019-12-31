@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Image , ScrollView , TouchableOpacity, FlatList} from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Image ,Alert, ScrollView , TouchableOpacity, FlatList} from 'react-native';
 import Header from './components/header'
 import TodoItem from './components/todoitem'
 import AddTodo from './components/addtodo'
@@ -21,6 +21,8 @@ export default function App() {
   }
 
   const submitnewTodo = (text) => {
+    if(text.length > 3)
+    {
     setTodos((prevTodos) => {
       return [
         { text : text , key : Math.random().toString() },
@@ -28,6 +30,14 @@ export default function App() {
       ]
 
     })
+    }
+    else
+    {
+      Alert.alert('!OOPS' , 'Todos must be over 3 chars long' , [
+        { text : 'Understood1' , onPress : () => console.log('Alert CLosed')},
+        { text : 'Understood2' , onPress : () => console.log('Alert CLosed')}
+      ])
+    }
 
   }
 

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Image , ScrollView , TouchableOpacity, FlatList} from 'react-native';
 import Header from './components/header'
-import TodoItem from './components/todoItem'
-
+import TodoItem from './components/todoitem'
 
 export default function App() {
   const [todos , setTodos] = useState([
@@ -14,6 +13,11 @@ export default function App() {
     { text : 'SIx Paxks' , key : '6'},
   ])
   
+  const deleteItem = (key) => {
+  setTodos((prevTodos) => {
+    return prevTodos.filter(todo => todo.key!=key)
+  })  
+  }
   return (
     <View style={styles.container}>
        {/**header */}
@@ -24,7 +28,7 @@ export default function App() {
            <FlatList 
            data= {todos}
            renderItem={( {item }) => (
-           <TodoItem />
+           <TodoItem item={item} deleteItem={deleteItem}/>
            )}
            
            />

@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, TextInput, Image , ScrollView , Touchab
 
 export default function App() {
   const [people , setPeople] = useState([
-    { name : "Rishabh Stuti" , key : 1},
+    { name : "Rishabh Sharma" , key : 1},
     { name : "RamanPreet" , key : 2},
     { name : "Rakshit Sharma" , key : 3},
     { name : "Raghav Sekhri" , key : 4},

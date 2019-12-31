@@ -73,9 +73,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content : {
+    flex: 1,   //flex dont let the content go off screen
     padding: 40
   },
   list : {
+    flex :1 ,
     marginTop : 20
   } 
   
